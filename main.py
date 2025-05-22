@@ -11,3 +11,12 @@ class InputData(BaseModel):
 def get_prediction(data: InputData):
     result = predict(data.text)
     return {"prediction": result}
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello, world!"}
+
